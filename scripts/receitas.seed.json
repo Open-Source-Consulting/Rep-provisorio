@@ -1,0 +1,317 @@
+[
+  {
+    "titulo": "Retrato à noite",
+    "categoria": "retrato",
+    "nivel": "intermediario",
+    "descricao": "Rosto nítido com fundo desfocado em pouca luz.",
+    "palavrasChave": "retrato noite noturno noturna pessoa rosto festa bokeh desfoque fundo escuro pouca luz amigo amiga",
+    "iso": "Auto, até 1600",
+    "exposicao": "+0,3",
+    "foco": "Toque no rosto",
+    "hdr": true,
+    "flash": "Desligado",
+    "modoCamera": "Retrato",
+    "passosGuiado": [
+      "Ative o modo Retrato no seletor de modos.",
+      "Procure uma luz suave perto do rosto, como uma vitrine ou um poste.",
+      "Toque no rosto na tela para focar e medir a luz.",
+      "Arraste o controle de brilho um pouco para cima (+0,3).",
+      "Segure o celular com as duas mãos e dispare sem flash."
+    ],
+    "resumoAutomatico": "A JOVI ativaria o modo Retrato com HDR, limitaria o ISO a 1600 e travaria o foco no rosto, com o flash desligado."
+  },
+  {
+    "titulo": "Retrato com luz de janela",
+    "categoria": "retrato",
+    "nivel": "facil",
+    "descricao": "Luz natural e suave vinda de lado, sem sombras duras.",
+    "palavrasChave": "retrato janela luz natural suave pessoa rosto casa interno dia perfil",
+    "iso": "Auto, até 400",
+    "exposicao": "0",
+    "foco": "Toque no olho mais próximo",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Retrato",
+    "passosGuiado": [
+      "Posicione a pessoa de lado para a janela, a cerca de um metro dela.",
+      "Apague as luzes do ambiente para não misturar cores.",
+      "Ative o modo Retrato.",
+      "Toque no olho mais próximo da janela para focar.",
+      "Se o lado escuro ficar escuro demais, use uma folha branca para rebater a luz."
+    ],
+    "resumoAutomatico": "A JOVI ativaria o modo Retrato, manteria o ISO baixo e focaria no olho mais próximo da luz, sem HDR para manter o contraste suave."
+  },
+  {
+    "titulo": "Selfie em grupo",
+    "categoria": "retrato",
+    "nivel": "facil",
+    "descricao": "Todo mundo no quadro e com o rosto iluminado.",
+    "palavrasChave": "selfie grupo amigos familia pessoas rosto festa viagem grande angular camera frontal",
+    "iso": "Auto",
+    "exposicao": "+0,3",
+    "foco": "Automático com detecção de rostos",
+    "hdr": true,
+    "flash": "Desligado",
+    "modoCamera": "Foto (câmera frontal)",
+    "passosGuiado": [
+      "Vire para a câmera frontal e escolha o enquadramento grande-angular.",
+      "Fiquem de frente para a luz, nunca com a luz atrás do grupo.",
+      "Estique o braço e incline o celular levemente para baixo.",
+      "Use o temporizador de 3 segundos para estabilizar.",
+      "Confira se todos os rostos aparecem antes de disparar."
+    ],
+    "resumoAutomatico": "A JOVI ativaria a câmera frontal em grande-angular, ligaria o HDR e a detecção de rostos e iniciaria um temporizador de 3 segundos."
+  },
+  {
+    "titulo": "Pôr do sol",
+    "categoria": "contraluz",
+    "nivel": "facil",
+    "descricao": "Céu colorido sem estourar o sol, com silhueta no primeiro plano.",
+    "palavrasChave": "por do sol entardecer sol ceu laranja horizonte silhueta praia tarde",
+    "iso": "Auto, até 200",
+    "exposicao": "-0,7",
+    "foco": "Toque no horizonte",
+    "hdr": true,
+    "flash": "Desligado",
+    "modoCamera": "Foto",
+    "passosGuiado": [
+      "Deixe o sol fora do centro, perto de um terço do quadro.",
+      "Toque no céu ao lado do sol para medir a luz.",
+      "Baixe o brilho (-0,7) até as cores do céu ficarem intensas.",
+      "Coloque algo no primeiro plano para virar silhueta: árvore, pessoa ou barco.",
+      "Faça várias fotos: as cores mudam a cada minuto."
+    ],
+    "resumoAutomatico": "A JOVI ligaria o HDR, mediria a luz no céu e reduziria a exposição em 0,7 para manter as cores do pôr do sol."
+  },
+  {
+    "titulo": "Paisagem com céu",
+    "categoria": "paisagem",
+    "nivel": "facil",
+    "descricao": "Céu e terreno bem expostos na mesma foto.",
+    "palavrasChave": "paisagem ceu nuvens montanha natureza campo viagem horizonte trilha dia",
+    "iso": "Auto, até 100",
+    "exposicao": "0",
+    "foco": "Infinito (toque no horizonte)",
+    "hdr": true,
+    "flash": "Desligado",
+    "modoCamera": "Foto",
+    "passosGuiado": [
+      "Ative a grade e alinhe o horizonte com uma das linhas horizontais.",
+      "Deixe dois terços do quadro para o céu se as nuvens forem o destaque.",
+      "Ative o HDR para equilibrar céu e chão.",
+      "Toque no horizonte para focar.",
+      "Para cenas muito largas, experimente o modo Panorama."
+    ],
+    "resumoAutomatico": "A JOVI ativaria o HDR e a grade, manteria o ISO no mínimo e focaria no infinito para deixar tudo nítido."
+  },
+  {
+    "titulo": "Chuva e reflexos",
+    "categoria": "paisagem",
+    "nivel": "intermediario",
+    "descricao": "Reflexos em poças e gotas, com clima dramático.",
+    "palavrasChave": "chuva reflexo reflexos poca agua molhado gotas rua cidade nublado guarda chuva",
+    "iso": "Auto, até 800",
+    "exposicao": "-0,3",
+    "foco": "Toque no reflexo",
+    "hdr": true,
+    "flash": "Desligado",
+    "modoCamera": "Foto",
+    "passosGuiado": [
+      "Abaixe o celular perto da poça para aumentar o reflexo.",
+      "Toque no reflexo para focar nele.",
+      "Baixe um pouco o brilho para o céu não estourar.",
+      "Ative o HDR para manter detalhes nas áreas escuras.",
+      "Seque a lente com um pano antes de disparar."
+    ],
+    "resumoAutomatico": "A JOVI ligaria o HDR, focaria no reflexo e reduziria a exposição em 0,3 para manter o clima escuro da chuva."
+  },
+  {
+    "titulo": "Cidade à noite",
+    "categoria": "noite",
+    "nivel": "intermediario",
+    "descricao": "Luzes da cidade nítidas, sem tremido nem granulado.",
+    "palavrasChave": "cidade noite noturna luzes predios rua urbano centro skyline",
+    "iso": "Auto, até 3200",
+    "exposicao": "-0,3",
+    "foco": "Toque no ponto mais iluminado",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Noite",
+    "passosGuiado": [
+      "Ative o modo Noite.",
+      "Apoie o celular em uma superfície ou segure com as duas mãos junto ao corpo.",
+      "Toque em um prédio iluminado para focar.",
+      "Baixe um pouco o brilho para as luzes não estourarem.",
+      "Fique parado até o contador do modo Noite terminar."
+    ],
+    "resumoAutomatico": "A JOVI ativaria o modo Noite com estabilização, reduziria a exposição em 0,3 e pediria para segurar firme durante a captura."
+  },
+  {
+    "titulo": "Fogos e luzes",
+    "categoria": "noite",
+    "nivel": "intermediario",
+    "descricao": "Rastros de luz de fogos de artifício e luzes de festa.",
+    "palavrasChave": "fogos artificio luzes festa reveillon show noite rastro brilho",
+    "iso": "100",
+    "exposicao": "-1,0",
+    "foco": "Manual no infinito",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Pro (obturador 2 s)",
+    "passosGuiado": [
+      "Abra o modo Pro.",
+      "Defina ISO 100 e obturador de 2 segundos.",
+      "Coloque o foco manual no infinito.",
+      "Apoie o celular em algo firme ou use um tripé.",
+      "Dispare assim que ouvir o lançamento, antes de os fogos abrirem."
+    ],
+    "resumoAutomatico": "A JOVI abriria o modo Pro com ISO 100, obturador de 2 segundos e foco no infinito, e recomendaria apoiar o celular."
+  },
+  {
+    "titulo": "Lua",
+    "categoria": "noite",
+    "nivel": "intermediario",
+    "descricao": "Lua com detalhes, sem virar uma bola branca.",
+    "palavrasChave": "lua ceu noite lua cheia zoom estrelas",
+    "iso": "100",
+    "exposicao": "-2,0",
+    "foco": "Toque na lua",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Foto com zoom 5x",
+    "passosGuiado": [
+      "Use o zoom até a lua ocupar boa parte do quadro.",
+      "Toque na lua para focar.",
+      "Baixe o brilho até aparecerem as crateras (cerca de -2).",
+      "Apoie o celular para evitar tremidos no zoom.",
+      "Use o temporizador para não mexer o aparelho ao tocar na tela."
+    ],
+    "resumoAutomatico": "A JOVI aplicaria zoom de 5x, focaria na lua e reduziria a exposição em 2 pontos para mostrar os detalhes."
+  },
+  {
+    "titulo": "Comida no restaurante",
+    "categoria": "comida",
+    "nivel": "facil",
+    "descricao": "Prato apetitoso com cores reais, mesmo com luz amarela.",
+    "palavrasChave": "comida prato restaurante almoco jantar mesa lanche doce sobremesa bebida cafe",
+    "iso": "Auto, até 800",
+    "exposicao": "+0,3",
+    "foco": "Toque no prato",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Comida",
+    "passosGuiado": [
+      "Ative o modo Comida.",
+      "Fotografe de cima (pratos planos) ou a 45 graus (lanches e bebidas).",
+      "Procure a luz da janela e evite o flash.",
+      "Toque no prato para focar.",
+      "Aumente um pouco o brilho para a comida parecer mais clara."
+    ],
+    "resumoAutomatico": "A JOVI ativaria o modo Comida, corrigiria o branco para a luz amarela do ambiente e aumentaria a exposição em 0,3."
+  },
+  {
+    "titulo": "Produto para vender online",
+    "categoria": "comida",
+    "nivel": "facil",
+    "descricao": "Objeto nítido, fundo limpo e cor fiel para anúncio.",
+    "palavrasChave": "produto vender venda online anuncio loja objeto marketplace fundo branco catalogo",
+    "iso": "Auto, até 200",
+    "exposicao": "+0,7",
+    "foco": "Toque e segure (bloqueio AE/AF)",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Foto",
+    "passosGuiado": [
+      "Mantenha o seletor de modos na opção Foto padrão.",
+      "Posicione o objeto bem centralizado no visor usando a grade.",
+      "Use um fundo limpo e de cor neutra para realçar os detalhes do produto.",
+      "Toque e segure sobre o objeto para travar o foco (bloqueio AE/AF).",
+      "Ajuste o brilho se necessário e faça o disparo."
+    ],
+    "resumoAutomatico": "A JOVI manteria o modo Foto, ativaria a grade, travaria foco e exposição no produto e clarearia a imagem em 0,7 para o fundo ficar limpo."
+  },
+  {
+    "titulo": "Documento e texto",
+    "categoria": "comida",
+    "nivel": "facil",
+    "descricao": "Texto legível, reto e sem reflexo.",
+    "palavrasChave": "documento texto papel folha contrato recibo nota quadro lousa digitalizar escanear",
+    "iso": "Auto",
+    "exposicao": "+0,3",
+    "foco": "Toque no texto",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Documento",
+    "passosGuiado": [
+      "Ative o modo Documento.",
+      "Coloque o papel sobre uma superfície escura e lisa.",
+      "Deixe o celular paralelo à folha para o texto não ficar torto.",
+      "Evite reflexos: não use flash e afaste-se de luzes diretas.",
+      "Confira se as bordas foram detectadas e dispare."
+    ],
+    "resumoAutomatico": "A JOVI ativaria o modo Documento, detectaria as bordas, corrigiria a perspectiva e aumentaria o contraste do texto."
+  },
+  {
+    "titulo": "Pet em movimento",
+    "categoria": "movimento",
+    "nivel": "intermediario",
+    "descricao": "Cachorro ou gato correndo, congelado e nítido.",
+    "palavrasChave": "pet cachorro cao gato animal correndo correr brincando movimento rapido parque",
+    "iso": "Auto, até 1600",
+    "exposicao": "0",
+    "foco": "Contínuo (acompanha o animal)",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Foto (rajada)",
+    "passosGuiado": [
+      "Fique na altura dos olhos do animal.",
+      "Toque e segure sobre ele para ativar o foco contínuo.",
+      "Use a rajada: segure o disparador enquanto ele corre.",
+      "Prefira lugares com bastante luz para evitar borrões.",
+      "Escolha a melhor foto da sequência depois."
+    ],
+    "resumoAutomatico": "A JOVI ativaria a rajada com foco contínuo e daria prioridade a uma velocidade de obturador alta para congelar o movimento."
+  },
+  {
+    "titulo": "Esporte e crianças correndo",
+    "categoria": "movimento",
+    "nivel": "intermediario",
+    "descricao": "Ação congelada no momento certo.",
+    "palavrasChave": "esporte crianca criancas correndo correr futebol jogo acao movimento rapido bicicleta skate",
+    "iso": "Auto, até 3200",
+    "exposicao": "0",
+    "foco": "Contínuo",
+    "hdr": false,
+    "flash": "Desligado",
+    "modoCamera": "Pro (obturador 1/1000 s)",
+    "passosGuiado": [
+      "Abra o modo Pro e defina o obturador em 1/1000 s.",
+      "Deixe o ISO no automático para compensar a velocidade.",
+      "Ative o foco contínuo.",
+      "Antecipe a ação: enquadre o lugar por onde a criança vai passar.",
+      "Use a rajada e escolha a melhor foto depois."
+    ],
+    "resumoAutomatico": "A JOVI abriria o modo Pro com obturador de 1/1000 s, ISO automático e foco contínuo, e ativaria a rajada."
+  },
+  {
+    "titulo": "Contraluz",
+    "categoria": "contraluz",
+    "nivel": "intermediario",
+    "descricao": "Pessoa iluminada mesmo com o sol atrás.",
+    "palavrasChave": "contraluz contra luz sol atras pessoa rosto escuro silhueta tarde praia brilho",
+    "iso": "Auto, até 400",
+    "exposicao": "+0,7",
+    "foco": "Toque no rosto",
+    "hdr": true,
+    "flash": "Preenchimento (automático)",
+    "modoCamera": "Retrato",
+    "passosGuiado": [
+      "Ative o HDR.",
+      "Toque no rosto para medir a luz nele, e não no céu.",
+      "Aumente o brilho até o rosto ficar visível (+0,7).",
+      "Se ainda estiver escuro, ligue o flash de preenchimento.",
+      "Se preferir uma silhueta, toque no céu e baixe o brilho."
+    ],
+    "resumoAutomatico": "A JOVI ligaria o HDR, mediria a luz no rosto, aumentaria a exposição em 0,7 e usaria o flash de preenchimento se fosse preciso."
+  }
+]

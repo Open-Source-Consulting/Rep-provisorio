@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOVI AI — Assistente de fotografia por inteligência artificial</title>
+  <meta name="description"
+    content="JOVI AI é um agente de inteligência artificial integrado à câmera do smartphone JOVI. Você descreve o que deseja fotografar, por texto ou voz, e a IA orienta ou configura a câmera.">
+  <meta name="theme-color" content="#0B0E12">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230B0E12'/><circle cx='16' cy='16' r='6.5' fill='none' stroke='%2322D3EE' stroke-width='2.5'/></svg>">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <symbol id="i-texto" viewBox="0 0 24 24">
+        <path d="M4 5.5h16v10.5H9.5L5.5 19.5V16H4z" />
+        <path d="M8 9.5h8M8 12.5h5" />
+      </symbol>
+      <symbol id="i-voz" viewBox="0 0 24 24">
+        <rect x="9.25" y="2.75" width="5.5" height="10.5" rx="2.75" />
+        <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3.25M9 21.25h6" />
+      </symbol>
+      <symbol id="i-cena" viewBox="0 0 24 24">
+        <path
+          d="M3.5 8V5.5A2 2 0 0 1 5.5 3.5H8M16 3.5h2.5a2 2 0 0 1 2 2V8M20.5 16v2.5a2 2 0 0 1-2 2H16M8 20.5H5.5a2 2 0 0 1-2-2V16" />
+        <circle cx="12" cy="12" r="3.25" />
+      </symbol>
+      <symbol id="i-passos" viewBox="0 0 24 24">
+        <path d="M4 6.5h2M4 12h2M4 17.5h2M9.5 6.5H20M9.5 12H20M9.5 17.5H20" />
+      </symbol>
+      <symbol id="i-sugestao" viewBox="0 0 24 24">
+        <path d="M12 3.5l1.9 4.6 4.6 1.9-4.6 1.9-1.9 4.6-1.9-4.6L5.5 10l4.6-1.9z" />
+        <path d="M18 16.5l.8 1.95 1.95.8-1.95.8-.8 1.95-.8-1.95-1.95-.8 1.95-.8z" />
+      </symbol>
+      <symbol id="i-explicacao" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.75" />
+        <path d="M9.6 9.4a2.45 2.45 0 1 1 3.2 2.34c-.5.18-.8.66-.8 1.19v.57" />
+        <path d="M12 16.6h.01" />
+      </symbol>
+      <symbol id="i-seta" viewBox="0 0 24 24">
+        <path d="M4.5 12h15M13.5 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+      <symbol id="i-fechar" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </symbol>
+      <symbol id="i-ampliar" viewBox="0 0 24 24">
+        <circle cx="10.75" cy="10.75" r="6.25" />
+        <path d="M15.4 15.4l4.1 4.1M10.75 8.25v5M8.25 10.75h5" />
+      </symbol>
+      <symbol id="i-guiado" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.75" />
+        <path d="M15.5 8.5l-2.1 5-5 2.1 2.1-5z" />
+      </symbol>
+      <symbol id="i-automatico" viewBox="0 0 24 24">
+        <path d="M12 3.25l2.1 5.15 5.15 2.1-5.15 2.1-2.1 5.15-2.1-5.15L4.75 10.5l5.15-2.1z" />
+        <path d="M18.75 17.5v3.25M17.125 19.125h3.25" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="cabecalho" id="topo">
+    <div class="cabecalho__interno">
+      <a class="marca" href="#topo" aria-label="JOVI AI — início">
+        <span class="marca__sigla" aria-hidden="true"></span>
+        <span class="marca__nome">JOVI <strong>AI</strong></span>
+      </a>
+
+      <nav class="nav" id="nav-principal" aria-label="Navegação principal">
+        <ul class="nav__lista">
+          <li><a class="nav__link" href="#solucao">A Solução</a></li>
+          <li><a class="nav__link" href="#publico">Público-Alvo</a></li>
+          <li><a class="nav__link" href="#galeria">Galeria</a></li>
+          <li><a class="nav__link" href="#equipe">Nossa Equipe</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav__alternar" id="btn-menu" type="button" aria-expanded="false" aria-controls="nav-principal"
+        aria-label="Abrir menu de navegação">
+        <svg class="icone" aria-hidden="true">
+          <use href="#i-menu"></use>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <section class="secao secao--escura hero" id="inicio">
+      <div class="container hero__grid">
+
+        <div class="hero__texto">
+          <p class="selo">
+            <span class="selo__ponto" aria-hidden="true"></span>
+            Inteligência artificial para fotografia
+          </p>
+          <h1 class="hero__titulo">Descreva a foto.<br>A JOVI AI prepara a câmera.</h1>
+          <p class="hero__resumo">
+            Um agente de inteligência artificial integrado à câmera do smartphone JOVI.
+            Você diz o que quer fotografar — por texto ou por voz — e ele interpreta sua
+            intenção, analisa a cena e indica os ajustes certos. Sem termos técnicos.
+          </p>
+          <div class="hero__acoes">
+            <a class="botao botao--primario" href="#solucao">
+              Conhecer a solução
+              <svg class="icone" aria-hidden="true">
+                <use href="#i-seta"></use>
+              </svg>
+            </a>
+            <a class="botao botao--fantasma" href="#galeria">Ver o aplicativo</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="visor">
+            <div class="celular">
+              <img class="celular__tela" src="assets/screenshots/camera-principal.jpg"
+                alt="Tela principal da câmera JOVI: visor com uma cena noturna em uma trilha arborizada, indicadores HDR e 4K60 no topo, seletor de modos Night, Portrait, Photo e Video na base, e o botão AI ao lado do disparador."
+                width="443" height="913" fetchpriority="high">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="secao" id="solucao" aria-labelledby="t-solucao">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <h2 class="secao__titulo" id="t-solucao">O problema não é a câmera.<br>É saber usá-la.</h2>
+          <p class="secao__lead">
+            As câmeras dos smartphones evoluíram muito: HDR, modo noturno, panorama, retrato,
+            profissional. Os recursos já estão no aparelho. O que falta é alguém para dizer
+            qual usar, e quando.
+          </p>
+        </div>
+
+        <div class="problema__grid">
+
+          <article class="painel painel--problema">
+            <h3 class="painel__titulo">O problema</h3>
+            <p class="painel__texto">
+              A quantidade de modos e configurações, somada à ausência de um guia de uso,
+              dificulta a vida de usuários iniciantes e intermediários. O resultado aparece
+              em cinco consequências diretas:
+            </p>
+            <ul class="consequencias">
+              <li class="consequencias__item">Dificuldade para configurar a câmera</li>
+              <li class="consequencias__item">Perda de tempo antes da captura</li>
+              <li class="consequencias__item">Resultados abaixo do esperado</li>
+              <li class="consequencias__item">Frustração durante o uso</li>
+              <li class="consequencias__item">Subutilização dos recursos do aparelho</li>
+            </ul>
+          </article>
+
+          <article class="painel painel--solucao">
+            <h3 class="painel__titulo">A solução</h3>
+            <p class="painel__texto">
+              O JOVI AI funciona como uma <strong>ponte entre o usuário e os recursos
+                avançados da câmera</strong>. Você explica o que deseja fotografar, em
+              linguagem natural, e a IA encontra a configuração adequada.
+            </p>
+            <p class="painel__texto">
+              Mais do que ajustar, ela explica o motivo de cada escolha em linguagem simples —
+              de modo que o usuário aprenda os recursos enquanto os utiliza, em vez de
+              depender da automação para sempre.
+            </p>
+            <p class="painel__destaque">
+              A intenção declarada pelo usuário permanece prioritária em toda a decisão do agente.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--alt" id="como-funciona" aria-labelledby="t-como">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <h2 class="secao__titulo" id="t-como">Como funciona</h2>
+          <p class="secao__lead">
+            Da intenção do usuário até a câmera pronta para o disparo, em quatro etapas.
+          </p>
+        </div>
+
+        <ol class="etapas__grid">
+          <li class="etapa">
+            <span class="etapa__numero" aria-hidden="true">01</span>
+            <h3 class="etapa__titulo">Diga o que deseja</h3>
+            <p class="etapa__texto">
+              Você descreve o objetivo da foto por texto ou por voz, em linguagem natural
+              e sem se preocupar com termos técnicos.
+            </p>
+          </li>
+          <li class="etapa">
+            <span class="etapa__numero" aria-hidden="true">02</span>
+            <h3 class="etapa__titulo">A IA entende</h3>
+            <p class="etapa__texto">
+              O agente interpreta a intenção declarada e a mantém como prioridade durante
+              todo o restante do processo.
+            </p>
+          </li>
+          <li class="etapa">
+            <span class="etapa__numero" aria-hidden="true">03</span>
+            <h3 class="etapa__titulo">A cena é analisada</h3>
+            <p class="etapa__texto">
+              Frames da câmera são analisados para identificar iluminação, contraste,
+              sujeito e contexto do ambiente.
+            </p>
+          </li>
+          <li class="etapa">
+            <span class="etapa__numero" aria-hidden="true">04</span>
+            <h3 class="etapa__titulo">A câmera é preparada</h3>
+            <p class="etapa__texto">
+              A IA recomenda os ajustes ou, no modo automático autorizado, aplica-os e
+              deixa a câmera pronta para a captura.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao secao--escura" id="modos" aria-labelledby="t-modos">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <h2 class="secao__titulo" id="t-modos">Dois modos. Você escolhe quanto controle entregar.</h2>
+          <p class="secao__lead">
+            Fora do modo automático, o agente não altera nada sem autorização explícita.
+            Aceitar ou recusar cada sugestão é sempre decisão do usuário.
+          </p>
+        </div>
+
+        <div class="modos__grid">
+
+          <article class="modo">
+            <div class="modo__conteudo">
+              <svg class="modo__icone" aria-hidden="true">
+                <use href="#i-guiado"></use>
+              </svg>
+              <h3 class="modo__titulo">Modo Guiado</h3>
+              <p class="modo__lema">Você aprende e mantém o controle.</p>
+              <p class="modo__texto">
+                O agente fornece instruções curtas, sequenciais e em linguagem simples para
+                que você mesmo faça os ajustes. Nenhuma configuração é aplicada
+                automaticamente: o controle permanece integralmente com o usuário, e o
+                fluxo termina com a câmera pronta para uso manual.
+              </p>
+            </div>
+            <figure class="modo__figura">
+              <img src="assets/screenshots/modo-guiado-passos.png"
+                alt="Tela do Modo Guiado do JOVI AI intitulada Como Configurar a Câmera, com cinco instruções numeradas para preparar o disparo."
+                width="454" height="804" loading="lazy" decoding="async">
+            </figure>
+          </article>
+
+          <article class="modo">
+            <div class="modo__conteudo">
+              <svg class="modo__icone" aria-hidden="true">
+                <use href="#i-automatico"></use>
+              </svg>
+              <h3 class="modo__titulo">Modo Automático</h3>
+              <p class="modo__lema">Você descreve. A IA configura.</p>
+              <p class="modo__texto">
+                Com sua autorização prévia, o agente aplica as configurações consideradas
+                adequadas a partir da intenção declarada e da análise da cena. Ao final,
+                os parâmetros aplicados são listados de forma transparente e a câmera fica
+                pronta — basta pressionar o disparador.
+              </p>
+            </div>
+            <figure class="modo__figura">
+              <img src="assets/screenshots/modo-automatico-otimizacao.png"
+                alt="Tela do Modo Automático do JOVI AI intitulada Otimização Inteligente, listando modo profissional, abertura f/4.0, ISO automático e estabilização, com o botão Capturar Agora."
+                width="428" height="904" loading="lazy" decoding="async">
+            </figure>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="publico" aria-labelledby="t-publico">
+      <div class="container publico__grid">
+
+        <div class="publico__intro">
+          <h2 class="secao__titulo" id="t-publico">Para quem carrega a câmera no bolso e não tem tempo a perder</h2>
+          <p class="secao__lead">
+            O público-alvo principal são <strong>estudantes full-time</strong>, usuários
+            ativos de smartphone e <strong>iniciantes ou intermediários em fotografia</strong>.
+            São pessoas que têm dificuldade com os diferentes modos disponíveis na câmera e
+            querem reduzir o tempo gasto em configurações manuais.
+          </p>
+        </div>
+
+        <div class="beneficios">
+          <div class="beneficio">
+            <h3 class="beneficio__titulo">Menos conhecimento técnico</h3>
+            <p class="beneficio__texto">Não é preciso dominar fotografia para chegar a um bom resultado.</p>
+          </div>
+          <div class="beneficio">
+            <h3 class="beneficio__titulo">Menos tempo configurando</h3>
+            <p class="beneficio__texto">A preparação da câmera deixa de custar o momento da captura.</p>
+          </div>
+          <div class="beneficio">
+            <h3 class="beneficio__titulo">Mais entendimento</h3>
+            <p class="beneficio__texto">Cada recomendação vem explicada, o que ensina os recursos do aparelho.</p>
+          </div>
+          <div class="beneficio">
+            <h3 class="beneficio__titulo">Mais chance de acertar</h3>
+            <p class="beneficio__texto">O caminho entre a intenção e a foto desejada fica bem mais curto.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="secao secao--alt" id="funcionalidades" aria-labelledby="t-recursos">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <h2 class="secao__titulo" id="t-recursos">Principais funcionalidades</h2>
+          <p class="secao__lead">
+            Os recursos previstos no escopo da solução, do jeito que o usuário os encontra.
+          </p>
+        </div>
+
+        <div class="recursos__grid">
+          <article class="recurso">
+            <svg class="recurso__icone" aria-hidden="true">
+              <use href="#i-texto"></use>
+            </svg>
+            <h3 class="recurso__titulo">Entrada por texto</h3>
+            <p class="recurso__texto">Digite em linguagem natural o que deseja fotografar; o agente interpreta a
+              intenção e recomenda um modo compatível.</p>
+          </article>
+          <article class="recurso">
+            <svg class="recurso__icone" aria-hidden="true">
+              <use href="#i-voz"></use>
+            </svg>
+            <h3 class="recurso__titulo">Entrada por voz</h3>
+            <p class="recurso__texto">Fale o objetivo da captura quando não der para digitar. O sistema converte a fala
+              em intenção e sugere o modo adequado.</p>
+          </article>
+          <article class="recurso">
+            <svg class="recurso__icone" aria-hidden="true">
+              <use href="#i-cena"></use>
+            </svg>
+            <h3 class="recurso__titulo">Análise de cena por imagem</h3>
+            <p class="recurso__texto">A partir de frames da câmera, a IA avalia iluminação, contraste, sujeito e
+              contexto antes de recomendar.</p>
+          </article>
+          <article class="recurso">
+            <svg class="recurso__icone" aria-hidden="true">
+              <use href="#i-passos"></use>
+            </svg>
+            <h3 class="recurso__titulo">Orientação de ajustes</h3>
+            <p class="recurso__texto">Instruções claras e sequenciais para que você mesmo realize os ajustes, no seu
+              ritmo.</p>
+          </article>
+          <article class="recurso">
+            <svg class="recurso__icone" aria-hidden="true">
+              <use href="#i-sugestao"></use>
+            </svg>
+            <h3 class="recurso__titulo">Sugestão automática por contexto</h3>
+            <p class="recurso__texto">O agente identifica o ambiente e sugere configurações sem interromper a
+              experiência. Aceitar ou ignorar é com você.</p>
+          </article>
+          <article class="recurso">
+            <svg class="recurso__icone" aria-hidden="true">
+              <use href="#i-explicacao"></use>
+            </svg>
+            <h3 class="recurso__titulo">Explicação dos modos</h3>
+            <p class="recurso__texto">Pergunte o que cada modo faz e receba uma explicação simples com exemplo prático —
+              sem sair da câmera.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--escura" id="galeria" aria-labelledby="t-galeria">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <h2 class="secao__titulo" id="t-galeria">A solução por dentro</h2>
+          <p class="secao__lead">
+            As telas do aplicativo, na ordem em que o usuário as encontra.
+            Selecione qualquer imagem para ampliar.
+          </p>
+        </div>
+
+        <div class="galeria__grid">
+
+          <figure class="tela tela--destaque">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/camera-principal.jpg"
+              data-legenda="Interface principal — a câmera da JOVI com o agente sempre a um toque, pelo botão AI ao lado do disparador."
+              aria-label="Ampliar imagem: Interface principal">
+              <img src="assets/screenshots/camera-principal.jpg"
+                alt="Tela principal da câmera JOVI com o visor ocupando quase toda a tela, indicadores HDR e 4K60 no topo e o seletor de modos na base."
+                width="443" height="913" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">Interface principal</h3>
+              <p>A câmera da JOVI com o agente sempre a um toque, pelo botão AI ao lado do disparador. Nada muda no
+                visor até que o usuário peça.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tela">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/menu-jovi-ai.png"
+              data-legenda="JOVI AI — o menu com os três caminhos disponíveis: dúvidas, modo guiado e modo automático."
+              aria-label="Ampliar imagem: menu JOVI AI">
+              <img src="assets/screenshots/menu-jovi-ai.png"
+                alt="Menu do JOVI AI com o título Selecione uma opção e três alternativas: Dúvidas (chatbot), Modo guiado e Modo automático."
+                width="433" height="905" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">JOVI AI</h3>
+              <p>Três caminhos: tirar dúvidas, ser guiado passo a passo ou autorizar a configuração automática.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tela">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/duvidas-chatbot.png"
+              data-legenda="Dúvidas — o chatbot responde perguntas sobre fotografia em linguagem simples."
+              aria-label="Ampliar imagem: chatbot de dúvidas">
+              <img src="assets/screenshots/duvidas-chatbot.png"
+                alt="Chatbot do JOVI AI exibindo a mensagem Olá! Sou a JOVI AI. Como posso ajudar com sua foto? e um campo de texto para perguntar à IA."
+                width="410" height="880" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">Dúvidas</h3>
+              <p>O chatbot explica modos e recursos em linguagem simples, sem jargão técnico.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tela">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/modo-guiado-objetivo.png"
+              data-legenda="Modo Guiado — o usuário descreve o objetivo para receber instruções personalizadas."
+              aria-label="Ampliar imagem: Modo Guiado, descrição do objetivo">
+              <img src="assets/screenshots/modo-guiado-objetivo.png"
+                alt="Tela do Modo Guiado perguntando O que você deseja fotografar?, com campo de texto livre e o botão Continuar."
+                width="447" height="830" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">Modo Guiado · objetivo</h3>
+              <p>Em poucas palavras, o usuário diz o que quer fotografar.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tela">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/modo-automatico-objetivo.png"
+              data-legenda="Modo Automático — a mesma descrição, agora autorizando a IA a otimizar a câmera."
+              aria-label="Ampliar imagem: Modo Automático, descrição do objetivo">
+              <img src="assets/screenshots/modo-automatico-objetivo.png"
+                alt="Tela do Modo Automático perguntando O que deseja fotografar?, explicando que a IA otimizará a câmera automaticamente."
+                width="435" height="801" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">Modo Automático · objetivo</h3>
+              <p>A mesma descrição, agora com autorização para a IA configurar.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tela tela--larga">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/modo-guiado-passos.png"
+              data-legenda="Modo Guiado — cinco passos curtos e ordenados; nenhum ajuste é aplicado sem o usuário."
+              aria-label="Ampliar imagem: Modo Guiado, passo a passo">
+              <img src="assets/screenshots/modo-guiado-passos.png"
+                alt="Tela Como Configurar a Câmera com cinco passos numerados: manter o seletor em Foto, centralizar o objeto, usar fundo neutro, travar o foco e ajustar o brilho."
+                width="454" height="804" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">Modo Guiado · passo a passo</h3>
+              <p>Cinco instruções curtas e ordenadas, em linguagem comum. Nenhum ajuste é aplicado automaticamente —
+                quem configura a câmera é você.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tela tela--larga">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/modo-automatico-otimizacao.png"
+              data-legenda="Modo Automático — os parâmetros aplicados ficam listados e a câmera fica pronta para o disparo."
+              aria-label="Ampliar imagem: Modo Automático, otimização inteligente">
+              <img src="assets/screenshots/modo-automatico-otimizacao.png"
+                alt="Tela Otimização Inteligente listando os parâmetros aplicados pela IA e a confirmação Configurações aplicadas com sucesso, acima do botão Capturar Agora."
+                width="428" height="904" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">Modo Automático · otimização</h3>
+              <p>Tudo o que a IA aplicou fica listado — modo, abertura, ISO e estabilização — antes de a câmera ficar
+                pronta para o disparo.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tela tela--larga">
+            <button class="tela__botao" type="button" data-img="assets/screenshots/modos-camera.png"
+              data-legenda="Modos extras — Pro, Panorama, Câmera Lenta, Time-Lapse, Noite+, Documento, Astro, Profissional, Instantâneo, Comida, Visualização Dupla e Foto em Movimento."
+              aria-label="Ampliar imagem: modos extras da câmera">
+              <img src="assets/screenshots/modos-camera.png"
+                alt="Tela Mais da câmera JOVI com uma grade de doze modos extras: Pro, Panorama, Câmera Lenta, Time-Lapse, Noite+, Documento, Astro, Profissional, Instantâneo, Comida, Visualização Dupla e Foto em Movimento."
+                width="459" height="911" loading="lazy" decoding="async">
+              <span class="tela__lupa" aria-hidden="true">
+                <svg class="icone">
+                  <use href="#i-ampliar"></use>
+                </svg>
+              </span>
+            </button>
+            <figcaption class="tela__legenda">
+              <h3 class="tela__titulo">Modos extras</h3>
+              <p>Além dos modos principais, a câmera reúne mais doze recursos especializados — do modo Astro ao
+                Documento — todos ao alcance do agente.</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="equipe" aria-labelledby="t-equipe">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <h2 class="secao__titulo" id="t-equipe">Nossa equipe</h2>
+          <p class="secao__lead">
+            Open Source Consulting — os cinco integrantes responsáveis pela definição e
+            modelagem da solução JOVI AI.
+          </p>
+        </div>
+
+        <ul class="equipe__grid">
+          <li class="integrante">
+            <span class="integrante__iniciais" aria-hidden="true">FP</span>
+            <h3 class="integrante__nome">Felipe Pedrol</h3>
+            <p class="integrante__rm">RM 569631</p>
+            <p class="integrante__funcao">Desenvolvimento</p>
+          </li>
+          <li class="integrante">
+            <span class="integrante__iniciais" aria-hidden="true">JC</span>
+            <h3 class="integrante__nome">Jecky Cossio</h3>
+            <p class="integrante__rm">RM 572226</p>
+            <p class="integrante__funcao">Desenvolvimento</p>
+          </li>
+          <li class="integrante">
+            <span class="integrante__iniciais" aria-hidden="true">DR</span>
+            <h3 class="integrante__nome">Daniel Ribeiro</h3>
+            <p class="integrante__rm">RM 571746</p>
+            <p class="integrante__funcao">UI/UX e Design</p>
+          </li>
+          <li class="integrante">
+            <span class="integrante__iniciais" aria-hidden="true">FG</span>
+            <h3 class="integrante__nome">Felipi Godoy</h3>
+            <p class="integrante__rm">RM 573741</p>
+            <p class="integrante__funcao">Criação de Textos e Pesquisa</p>
+          </li>
+          <li class="integrante">
+            <span class="integrante__iniciais" aria-hidden="true">LE</span>
+            <h3 class="integrante__nome">Leonardo</h3>
+            <p class="integrante__rm">RM 571311</p>
+            <p class="integrante__funcao">Documentação e Testes de Responsividade</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao secao--alt" id="contato" aria-labelledby="t-contato">
+      <div class="container contato__grid">
+
+        <div class="contato__principal">
+          <h2 class="secao__titulo" id="t-contato">Fale com a equipe</h2>
+          <p class="secao__lead">
+            Dúvidas ou sugestões sobre o projeto? Deixe sua mensagem abaixo.
+          </p>
+
+          <form class="formulario" id="form-contato" novalidate>
+            <div class="campo">
+              <label class="campo__rotulo" for="nome">Nome</label>
+              <input class="campo__entrada" type="text" id="nome" name="nome" autocomplete="name"
+                placeholder="Como podemos chamar você?" required>
+            </div>
+
+            <div class="campo">
+              <label class="campo__rotulo" for="email">E-mail</label>
+              <input class="campo__entrada" type="email" id="email" name="email" autocomplete="email"
+                placeholder="seunome@exemplo.com" required>
+            </div>
+
+            <div class="campo campo--largo">
+              <label class="campo__rotulo" for="mensagem">Mensagem</label>
+              <textarea class="campo__entrada campo__area" id="mensagem" name="mensagem" rows="5"
+                placeholder="Escreva sua dúvida ou sugestão sobre o JOVI AI." required></textarea>
+            </div>
+
+            <div class="campo campo--largo formulario__rodape">
+              <button class="botao botao--primario" type="submit">
+                Enviar mensagem
+                <svg class="icone" aria-hidden="true">
+                  <use href="#i-seta"></use>
+                </svg>
+              </button>
+              <p class="formulario__aviso" id="aviso-form">
+                Este formulário é uma demonstração acadêmica. A página não possui servidor
+                nem banco de dados, portanto <strong>nenhuma mensagem é enviada ou
+                  armazenada</strong>.
+              </p>
+            </div>
+
+            <p class="formulario__retorno" id="retorno-form" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+
+        <aside class="contato__info" aria-label="Informações do projeto">
+          <h3 class="info__titulo">Sobre o projeto</h3>
+          <dl class="info__lista">
+            <div class="info__linha">
+              <dt>Equipe</dt>
+              <dd>Open Source Consulting</dd>
+            </div>
+            <div class="info__linha">
+              <dt>Entrega</dt>
+              <dd>Challenge JOVI</dd>
+            </div>
+            <div class="info__linha">
+              <dt>Natureza</dt>
+              <dd>Projeto acadêmico</dd>
+            </div>
+            <div class="info__linha">
+              <dt>Escopo</dt>
+              <dd>Definição e modelagem da solução de software: escopo estruturado, backlog, user stories, fluxos de
+                interação e arquitetura técnica.</dd>
+            </div>
+          </dl>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container footer__grid">
+
+      <div class="rodape__marca">
+        <p class="marca marca--rodape">
+          <span class="marca__sigla" aria-hidden="true"></span>
+          <span class="marca__nome">JOVI <strong>AI</strong></span>
+        </p>
+        <p class="rodape__texto">
+          Um agente de inteligência artificial integrado à câmera do smartphone JOVI, que
+          interpreta a intenção do usuário e prepara a câmera para a foto que ele quer fazer.
+        </p>
+      </div>
+
+      <nav class="rodape__nav" aria-label="Seções da página">
+        <h2 class="rodape__titulo">Navegação</h2>
+        <ul class="rodape__lista">
+          <li><a href="#solucao">A Solução</a></li>
+          <li><a href="#como-funciona">Como Funciona</a></li>
+          <li><a href="#publico">Público-Alvo</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#equipe">Nossa Equipe</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="rodape__equipe">
+        <h2 class="rodape__titulo">Equipe</h2>
+        <ul class="rodape__lista">
+          <li>Daniel Ribeiro <span>RM 571746</span></li>
+          <li>Felipe Pedrol <span>RM 569631</span></li>
+          <li>Leonardo <span>RM 571311</span></li>
+          <li>Jecky Cossio <span>RM 572226</span></li>
+          <li>Felipi Godoy <span>RM 573741</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <p class="rodape__creditos">
+        Projeto acadêmico desenvolvido pela Open Source Consulting para o Challenge JOVI.
+        As telas apresentadas são de um protótipo. © 2026.
+      </p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
+    <button class="lightbox__fechar" type="button" id="btn-fechar-lightbox" aria-label="Fechar imagem ampliada">
+      <svg class="icone" aria-hidden="true">
+        <use href="#i-fechar"></use>
+      </svg>
+    </button>
+    <figure class="lightbox__figura">
+      <img class="lightbox__img" id="lightbox-img"
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="">
+      <figcaption class="lightbox__legenda" id="lightbox-legenda"></figcaption>
+    </figure>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

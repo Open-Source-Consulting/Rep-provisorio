@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-10-14T06:35:27.915Z",
+        "reason": "user confirmed: escolheu 'Evoluir a identidade atual' em 2026-10-14; Montserrat e Source Sans 3 sao compromisso de marca em PRODUCT.md"
+      }
+    ]
+  }
+}
