@@ -113,7 +113,7 @@ scripts/        seed da API e teste dos dados do seed
 
 **No produto:** a JOVI AI é uma proposta. Neste site, a parte de inteligência artificial (entrada por voz, análise de cena e ajuste automático da câmera) aparece apenas como conceito, em textos e nas telas do protótipo. O "Descreva a foto" do Estúdio não usa IA: ele compara as palavras digitadas com as palavras-chave de cada receita.
 
-**No desenvolvimento:** a equipe usou ferramentas de IA como apoio. O Codex (OpenAI) ajudou a reorganizar a documentação do repositório e a preparar as instruções para a continuação do projeto. O Claude Code (Anthropic) foi usado na revisão do código e para deixá-lo mais simples e com comentários mais claros.
+**No desenvolvimento:** a equipe usou ferramentas de IA como apoio. O Codex (OpenAI) ajudou a reorganizar a documentação do repositório e a preparar as instruções para a continuação do projeto. O Claude Code (Anthropic) foi usado na revisão do código e deixar os comentários mais claros.
 
 ## Equipe
 
